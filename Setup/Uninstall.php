@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Contact\Setup;
+namespace Bogkov\Contact\Setup;
 
 use Magento\Framework\Setup\UninstallInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
@@ -8,7 +8,8 @@ use Magento\Framework\Setup\ModuleContextInterface;
 
 /**
  * Class Uninstall
- * @package Vendor\Contact\Setup
+ *
+ * @package Bogkov\Contact\Setup
  */
 class Uninstall implements UninstallInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Contact\Setup;
+namespace Bogkov\Contact\Setup;
 
 use Magento\Framework\DB\Ddl\Table;
 use Magento\Framework\Setup\InstallSchemaInterface;
@@ -10,13 +10,12 @@ use Magento\Framework\Setup\SchemaSetupInterface;
 /**
  * Class InstallSchema
  *
- * @package Vendor\Contact\Setup
+ * @package Bogkov\Contact\Setup
  */
 class InstallSchema implements InstallSchemaInterface
 {
     /**
      * {@inheritdoc}
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {

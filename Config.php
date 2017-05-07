@@ -1,13 +1,13 @@
 <?php
 
-namespace Vendor\Contact;
+namespace Bogkov\Contact;
 
 /**
  * Class Config
  *
- * @package Vendor\Contact
+ * @package Bogkov\Contact
  */
 class Config
 {
-    const NAME = 'Vendor_Contact';
+    const NAME = 'Bogkov_Contact';
 }
