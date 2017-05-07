@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Bogkov_Contact::contact" title="Contact Us" sortOrder="40">
+                    <resource id="Bogkov_Contact::view" title="View Contact Us" sortOrder="10" />
+                    <resource id="Bogkov_Contact::response" title="Response to Contact Us" sortOrder="20" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
