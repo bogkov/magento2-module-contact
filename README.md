@@ -1,4 +1,4 @@
-# Magneto 2 Module Contact
+# Extended Magento 2 Module Contact
 
 Extended functional for default Magento 2 Contact module.
 
