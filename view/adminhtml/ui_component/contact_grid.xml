@@ -150,5 +150,12 @@
                 </item>
             </argument>
         </column>
+        <actionsColumn name="actions" class="Bogkov\Contact\Ui\Component\Listing\Column\Actions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">contact_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
     </columns>
 </listing>

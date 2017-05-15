@@ -11,6 +11,9 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
  */
 class Contact extends AbstractDb
 {
+    const TABLE = 'contact';
+    const FIELD_ID = 'contact_id';
+
     /**
      * Define main table
      *
@@ -18,6 +21,6 @@ class Contact extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('contact', 'contact_id');
+        $this->_init(static::TABLE, static::FIELD_ID);
     }
 }
