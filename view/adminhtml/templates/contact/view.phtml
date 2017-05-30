@@ -1,0 +1,15 @@
+<div class="contact wrapper">
+    <ul class="contacts list items">
+        <?php /** @var $block \Bogkov\Contact\Block\Adminhtml\Contact\View */ ?>
+        <?php /** @var $message \Bogkov\Contact\Model\ContactMessage */ ?>
+        <?php foreach ($block->getContactMessages() as $message): ?>
+            <li class="item">
+                <div style="clear: both">
+                    <div style="margin: 10px; border: 1px solid black; padding: 15px; float: <?php echo \Bogkov\Contact\Model\ResourceModel\ContactMessage::TYPE_CODE_CUSTOMER === $message->getData('type_code') ? 'left' : 'right' ?>">
+                        <?php /* @escapeNotVerified */ echo $message->getData('text') ?>
+                    </div>
+                </div>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

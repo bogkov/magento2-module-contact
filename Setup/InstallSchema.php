@@ -2,6 +2,8 @@
 
 namespace Bogkov\Contact\Setup;
 
+use Bogkov\Contact\Model\ResourceModel\Contact;
+use Bogkov\Contact\Model\ResourceModel\ContactMessage;
 use Magento\Framework\DB\Ddl\Table;
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -35,9 +37,9 @@ class InstallSchema implements InstallSchemaInterface
     protected function createTableContact(SchemaSetupInterface $setup)
     {
         $table = $setup->getConnection()
-            ->newTable($setup->getTable('contact'))
+            ->newTable($setup->getTable(Contact::TABLE))
             ->addColumn(
-                'contact_id',
+                Contact::FIELD_ID,
                 Table::TYPE_BIGINT,
                 null,
                 ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],
@@ -49,13 +51,6 @@ class InstallSchema implements InstallSchemaInterface
                 null,
                 ['unsigned' => true, 'default' => '0'],
                 'Store ID'
-            )
-            ->addColumn(
-                'customer_id',
-                Table::TYPE_INTEGER,
-                null,
-                ['unsigned' => true],
-                'Customer ID'
             )
             ->addColumn(
                 'status_code',
@@ -96,9 +91,12 @@ class InstallSchema implements InstallSchemaInterface
                 $setup->getIdxName('contact', ['store_id']),
                 ['store_id']
             )
-            ->addIndex(
-                $setup->getIdxName('contact', ['customer_id']),
-                ['customer_id']
+            ->addForeignKey(
+                $setup->getFkName(Contact::TABLE, 'store_id', 'store', 'store_id'),
+                'store_id',
+                $setup->getTable('store'),
+                'store_id',
+                Table::ACTION_SET_NULL
             )
             ->setComment('Contact base information');
         $setup->getConnection()->createTable($table);
@@ -112,9 +110,9 @@ class InstallSchema implements InstallSchemaInterface
     protected function createTableContactMessage(SchemaSetupInterface $setup)
     {
         $table = $setup->getConnection()
-            ->newTable($setup->getTable('contact_message'))
+            ->newTable($setup->getTable(ContactMessage::TABLE))
             ->addColumn(
-                'contact_message_id',
+                ContactMessage::FIELD_ID,
                 Table::TYPE_BIGINT,
                 null,
                 ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],
@@ -141,15 +139,22 @@ class InstallSchema implements InstallSchemaInterface
                 ['nullable' => false],
                 'Text'
             )
+            ->addColumn(
+                'created_at',
+                Table::TYPE_TIMESTAMP,
+                null,
+                ['nullable' => false, 'default' => Table::TIMESTAMP_INIT],
+                'Contact create date'
+            )
             ->addIndex(
-                $setup->getIdxName('contact', ['contact_id']),
+                $setup->getIdxName(Contact::TABLE, ['contact_id']),
                 ['contact_id']
             )
             ->addForeignKey(
-                $setup->getFkName('contact_message', 'contact_id', 'contact', 'contact_id'),
+                $setup->getFkName(ContactMessage::TABLE, 'contact_id', Contact::TABLE, Contact::FIELD_ID),
                 'contact_id',
-                $setup->getTable('contact'),
-                'contact_id',
+                $setup->getTable(Contact::TABLE),
+                Contact::FIELD_ID,
                 Table::ACTION_CASCADE
             )
             ->setComment('Contact message information');

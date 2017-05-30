@@ -5,24 +5,24 @@ namespace Bogkov\Contact\Model\ResourceModel;
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 /**
- * Class Contact
+ * Class ContactMessage
  *
  * @package Bogkov\Contact\Model\ResourceModel
  */
-class Contact extends AbstractDb
+class ContactMessage extends AbstractDb
 {
-    const TABLE = 'contact';
+    const TABLE = 'contact_message';
 
     /**
      * Fields
      */
-    const FIELD_ID = 'contact_id';
+    const FIELD_ID = 'contact_message_id';
 
     /**
-     * Status codes
+     * Type codes
      */
-    const STATUS_CODE_WAIT_FOR_ANSWER = 'wait_for_answer';
-    const STATUS_CODE_ANSWERED        = 'answered';
+    const TYPE_CODE_CUSTOMER = 'customer';
+    const TYPE_CODE_OWNER    = 'owner';
 
     /**
      * Define main table

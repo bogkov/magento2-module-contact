@@ -2,8 +2,8 @@
 
 namespace Bogkov\Contact\Model\ResourceModel\Contact;
 
-use Bogkov\Contact\Model\Contact;
-use Bogkov\Contact\Model\ResourceModel\Contact as ResourceModel;
+use Bogkov\Contact\Model\Contact as ContactModel;
+use Bogkov\Contact\Model\ResourceModel\Contact as ContactResourceModel;
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
 /**
@@ -20,6 +20,6 @@ class Collection extends AbstractCollection
      */
     protected function _construct()
     {
-        $this->_init(Contact::class, ResourceModel::class);
+        $this->_init(ContactModel::class, ContactResourceModel::class);
     }
 }

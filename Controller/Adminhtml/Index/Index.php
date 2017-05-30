@@ -18,18 +18,18 @@ class Index extends Action
     /**
      * @var PageFactory
      */
-    protected $resultPageFactory;
+    protected $pageFactory;
 
     /**
      * @param Context     $context
-     * @param PageFactory $resultPageFactory
+     * @param PageFactory $pageFactory
      */
     public function __construct(
         Context $context,
-        PageFactory $resultPageFactory
+        PageFactory $pageFactory
     ) {
         parent::__construct($context);
-        $this->resultPageFactory = $resultPageFactory;
+        $this->pageFactory = $pageFactory;
     }
 
     /**
@@ -50,7 +50,7 @@ class Index extends Action
     public function execute()
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
-        $resultPage = $this->resultPageFactory->create();
+        $resultPage = $this->pageFactory->create();
         $resultPage->setActiveMenu(Config::NAME . '::contact');
         $resultPage->getConfig()->getTitle()->prepend(__('Contact Us'));
 

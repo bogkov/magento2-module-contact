@@ -2,6 +2,7 @@
 
 namespace Bogkov\Contact\Ui\Component\Listing\Column\StatusCode;
 
+use Bogkov\Contact\Model\ResourceModel\Contact;
 use Magento\Framework\Data\OptionSourceInterface;
 
 /**
@@ -18,11 +19,11 @@ class Options implements OptionSourceInterface
     {
         return [
             [
-                'value' => 1,
+                'value' => Contact::STATUS_CODE_WAIT_FOR_ANSWER,
                 'label' => __('Wait for answer'),
             ],
             [
-                'value' => 2,
+                'value' => Contact::STATUS_CODE_ANSWERED,
                 'label' => __('Answered'),
             ]
         ];

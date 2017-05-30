@@ -2,15 +2,15 @@
 
 namespace Bogkov\Contact\Model;
 
-use Bogkov\Contact\Model\ResourceModel\Contact as ContactResourceModel;
+use Bogkov\Contact\Model\ResourceModel\ContactMessage as ContactMessageResourceModel;
 use Magento\Framework\Model\AbstractModel;
 
 /**
- * Class Contact
+ * Class ContactMessage
  *
  * @package Bogkov\Contact\Model
  */
-class Contact extends AbstractModel
+class ContactMessage extends AbstractModel
 {
     /**
      * Define resource model
@@ -19,6 +19,6 @@ class Contact extends AbstractModel
      */
     protected function _construct()
     {
-        $this->_init(ContactResourceModel::class);
+        $this->_init(ContactMessageResourceModel::class);
     }
 }
