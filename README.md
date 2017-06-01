@@ -38,16 +38,16 @@ You may need to Flush Magento Cache after installation.
 
 ### 0.3.0
 
- - [x] I18n: Core 
- - [ ] Controller: admin index action view
- - [ ] View: admin layout for admin controller index action index
- - [ ] Controller: override default Magento contact action post
- - [ ] Controller: admin index action response
+ - [x] I18n: Core
+ - [x] Controller: admin index action view
+ - [x] View: admin layout for admin controller index action view
+ - [x] Controller: override default Magento contact action post
+ - [X] View: contact grid action delete
  
 ### 0.4.0
 
- - [ ] View: contact grid action delete
- - [ ] Controller: admin index action delete
- - [ ] View: admin grid manual change status
+ - [X] Controller: admin index action delete
+ - [X] View: admin grid manual change status
+ - [ ] Controller: admin index action response
  - [ ] Controller: admin manual change status
  - [ ] Admin menu count wait for answer

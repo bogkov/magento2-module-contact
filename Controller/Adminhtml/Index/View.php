@@ -111,7 +111,7 @@ class View extends Action
      */
     protected function redirectToIndexWithMessage($message)
     {
-        $this->messageManager->addError($message);
+        $this->messageManager->addErrorMessage($message);
 
         return $this->_redirect('contact/index');
     }

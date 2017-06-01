@@ -41,21 +41,20 @@ class Actions extends Column
     public function prepareDataSource(array $dataSource)
     {
         if (isset($dataSource['data']['items'])) {
-            $storeId = $this->context->getFilterParam('store_id');
-
             foreach ($dataSource['data']['items'] as &$item) {
-                $url = $this->urlBuilder->getUrl(
-                    'contact/*/view',
-                    [
-                        'contact_id' => $item['contact_id'],
-                        'store' => $storeId,
-                    ]
-                );
-
                 $item[$this->getData('name')]['edit'] = [
-                    'href' => $url,
+                    'href' => $this->urlBuilder->getUrl('contact/*/view', ['contact_id' => $item['contact_id'],]),
                     'label' => __('View'),
                     'hidden' => false,
+                ];
+
+                $item[$this->getData('name')]['delete'] = [
+                    'href' => $this->urlBuilder->getUrl('contact/*/delete', ['contact_id' => $item['contact_id'],]),
+                    'label' => __('Delete'),
+                    'confirm' => [
+                        'title' => __('Delete #${ $.$data.contact_id }'),
+                        'message' => __('Are you sure you wan\'t to delete a #${ $.$data.contact_id } record?')
+                    ]
                 ];
             }
         }
