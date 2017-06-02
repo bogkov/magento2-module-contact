@@ -2,7 +2,7 @@
 
 namespace Bogkov\Contact\Ui\Component\Listing\Column\StatusCode;
 
-use Bogkov\Contact\Model\ResourceModel\Contact;
+use Bogkov\Contact\Model\Contact;
 use Magento\Framework\Data\OptionSourceInterface;
 
 /**

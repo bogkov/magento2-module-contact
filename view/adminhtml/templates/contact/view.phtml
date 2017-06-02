@@ -1,4 +1,6 @@
-<?php /** @var $block \Bogkov\Contact\Block\Adminhtml\Contact\View */ ?>
+<?php /** @var $block \Bogkov\Contact\Block\Adminhtml\Contact\View */
+
+use Bogkov\Contact\Model\ContactMessage; ?>
 <div class="contact">
     <div class="contact-info">
         <div><span><?php echo __('Name') ?>: </span><?php /* @escapeNotVerified */ echo $block->getContact()->getData('user_name') ?></div>
@@ -9,7 +11,7 @@
     <?php foreach ($block->getContactMessages() as $message): ?>
         <div class="item contact-message <?php /* @escapeNotVerified */ echo $message->getData('type_code') ?>">
             <div class="contact-message-head">
-                <?php if (\Bogkov\Contact\Model\ResourceModel\ContactMessage::TYPE_CODE_CUSTOMER === $message->getData('type_code')) : ?>
+                <?php if (ContactMessage::TYPE_CODE_CUSTOMER === $message->getData('type_code')) : ?>
                     <?php /* @escapeNotVerified */ echo __('Customer wrote at %1:', $block->formatDateTime($message->getData('created_at'), 'M j, Y H:i:s A')) ?>
                 <?php else : ?>
                     <?php /* @escapeNotVerified */ echo __('Administrator answered at %1:', $block->formatDateTime($message->getData('created_at'), 'M j, Y H:i:s A')) ?>

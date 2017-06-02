@@ -16,13 +16,11 @@ class ContactMessage extends AbstractDb
     /**
      * Fields
      */
-    const FIELD_ID = 'contact_message_id';
-
-    /**
-     * Type codes
-     */
-    const TYPE_CODE_CUSTOMER = 'customer';
-    const TYPE_CODE_OWNER    = 'owner';
+    const FIELD_ID         = 'contact_message_id';
+    const FIELD_CONTACT_ID = 'contact_id';
+    const FIELD_TYPE_CODE  = 'type_code';
+    const FIELD_TEXT       = 'text';
+    const FIELD_CREATED_AT = 'created_at';
 
     /**
      * Define main table

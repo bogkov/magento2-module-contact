@@ -4,6 +4,7 @@ namespace Bogkov\Contact\Controller\Adminhtml\Index;
 
 use Bogkov\Contact\Config;
 use Bogkov\Contact\Model\ContactFactory;
+use Bogkov\Contact\Model\ResourceModel\Contact;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\Model\View\Result\Page;
@@ -18,6 +19,11 @@ use Magento\Framework\View\Result\PageFactory;
  */
 class View extends Action
 {
+    /**
+     * Authorization level of a basic admin session
+     */
+    const ADMIN_RESOURCE = Config::NAME . '::view';
+
     /**
      * @var ContactFactory
      */
@@ -34,6 +40,8 @@ class View extends Action
     protected $pageFactory;
 
     /**
+     * View constructor.
+     *
      * @param Context        $context
      * @param ContactFactory $contactFactory
      * @param Registry       $registry
@@ -53,23 +61,13 @@ class View extends Action
     }
 
     /**
-     * Check the permission to run it
-     *
-     * @return bool
-     */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed(Config::NAME . '::view');
-    }
-
-    /**
      * Contact list action
      *
      * @return Page|ResponseInterface
      */
     public function execute()
     {
-        $contactId = $this->getRequest()->getParam('contact_id');
+        $contactId = $this->getRequest()->getParam(Contact::FIELD_ID);
 
         if (null === $contactId) {
             $this->messageManager->addErrorMessage(__('Contact ID not specified'));

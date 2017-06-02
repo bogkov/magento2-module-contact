@@ -13,6 +13,12 @@ use Magento\Framework\Model\AbstractModel;
 class Contact extends AbstractModel
 {
     /**
+     * Status codes
+     */
+    const STATUS_CODE_WAIT_FOR_ANSWER = 'wait_for_answer';
+    const STATUS_CODE_ANSWERED        = 'answered';
+
+    /**
      * Define resource model
      *
      * @return void

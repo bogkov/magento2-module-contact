@@ -42,6 +42,8 @@ class Post extends MagentoPost
     protected $contactMessageFactory;
 
     /**
+     * Post constructor.
+     *
      * @param Context               $context
      * @param TransportBuilder      $transportBuilder
      * @param StateInterface        $inlineTranslation
@@ -161,7 +163,7 @@ class Post extends MagentoPost
         /** @var Contact $contactModel */
         $contactModel = $this->contactFactory->create();
         $contactModel->setData('store_id', Store::DEFAULT_STORE_ID);
-        $contactModel->setData('status_code', \Bogkov\Contact\Model\ResourceModel\Contact::STATUS_CODE_WAIT_FOR_ANSWER);
+        $contactModel->setData('status_code', Contact::STATUS_CODE_WAIT_FOR_ANSWER);
         $contactModel->setData('user_name', $postObject->getData('name'));
         $contactModel->setData('user_email', $postObject->getData('email'));
         $contactModel->setData('phone_number', $postObject->getData('telephone'));
@@ -170,7 +172,7 @@ class Post extends MagentoPost
         /** @var ContactMessage $messageModel */
         $messageModel = $this->contactMessageFactory->create();
         $messageModel->setData('contact_id', $contactModel->getId());
-        $messageModel->setData('type_code', \Bogkov\Contact\Model\ResourceModel\ContactMessage::TYPE_CODE_CUSTOMER);
+        $messageModel->setData('type_code', Contact::TYPE_CODE_CUSTOMER);
         $messageModel->setData('text', $postObject->getData('comment'));
         $messageModel->save();
     }

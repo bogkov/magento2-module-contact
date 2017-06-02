@@ -7,6 +7,11 @@ use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Framework\UrlInterface;
 
+/**
+ * Class Actions
+ *
+ * @package Bogkov\Contact\Ui\Component\Listing\Column
+ */
 class Actions extends Column
 {
     /**
@@ -52,8 +57,8 @@ class Actions extends Column
                     'href' => $this->urlBuilder->getUrl('contact/*/delete', ['contact_id' => $item['contact_id'],]),
                     'label' => __('Delete'),
                     'confirm' => [
-                        'title' => __('Delete #${ $.$data.contact_id }'),
-                        'message' => __('Are you sure you wan\'t to delete a #${ $.$data.contact_id } record?')
+                        'title' => __('Delete'),
+                        'message' => __('Are you sure you want to delete a record?')
                     ]
                 ];
             }

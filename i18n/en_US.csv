@@ -4,8 +4,27 @@ Response to Contact Us,Response to Contact Us
 View,View
 Wait for answer,Wait for answer
 Answered,Answered
-User Name,User Name
+Name,Name
 Phone Number,Phone Number
 Created At,Created At
 Status,Status
-User Email,User Email
+Email,Email
+Response,Response
+View,View
+Delete,Delete
+Sent Response,Sent Response
+The contact has been deleted.,The contact has been deleted.
+We can't find a contact to delete.,We can't find a contact to delete.
+Response message successfully send,Response message successfully send
+Response message can't be empty,Response message can't be empty
+Contact ID not specified,Contact ID not specified
+Contact with #%1 no longer exists,Contact with #%1 no longer exists
+View Contact #%1,View Contact #%1
+A total of %1 record(s) were updated.,A total of %1 record(s) were updated.
+Thanks for contacting us with your comments and questions. We'll respond to you very soon.,Thanks for contacting us with your comments and questions. We'll respond to you very soon.
+"We can't process your request right now. Sorry, that's all we know.","We can't process your request right now. Sorry, that's all we know."
+Are you sure you want to delete a record?,Are you sure you want to delete a record?
+Change Status,Change Status
+Are you sure you want to change the status of selected contacts to \"%1\"?,Are you sure you want to change the status of selected contacts to \"%1\"?
+Customer wrote at %1:,Customer wrote at %1:
+Administrator answered at %1:,Administrator answered at %1:

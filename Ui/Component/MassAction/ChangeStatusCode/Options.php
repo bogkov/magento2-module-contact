@@ -2,6 +2,7 @@
 
 namespace Bogkov\Contact\Ui\Component\MassAction\ChangeStatusCode;
 
+use Bogkov\Contact\Model\ResourceModel\Contact;
 use Bogkov\Contact\Ui\Component\Listing\Column\StatusCode\Options as StatusCodeOptions;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\UrlInterface;
@@ -51,12 +52,12 @@ class Options implements JsonSerializable
                 'url' => $this->urlBuilder->getUrl(
                     'contact/massAction/changeStatusCode',
                     [
-                        'status_code' => $option['value'],
+                        Contact::FIELD_STATUS_CODE => $option['value'],
                     ]
                 ),
                 'confirm' => [
                     'title' => __('Change Status'),
-                    'message' => __('Are you sure to change status for selected contacts to "%1"?', $option['label']),
+                    'message' => __('Are you sure you want to change the status of selected contacts to "%1"?', $option['label']),
                 ],
             ];
         }

@@ -46,54 +46,54 @@ class InstallSchema implements InstallSchemaInterface
                 'Contact ID'
             )
             ->addColumn(
-                'store_id',
+                Contact::FIELD_STORE_ID,
                 Table::TYPE_SMALLINT,
                 null,
                 ['unsigned' => true, 'default' => '0'],
                 'Store ID'
             )
             ->addColumn(
-                'status_code',
+                Contact::FIELD_STATUS_CODE,
                 Table::TYPE_TEXT,
                 30,
                 ['nullable' => false],
                 'Status code'
             )
             ->addColumn(
-                'user_name',
+                Contact::FIELD_USER_NAME,
                 Table::TYPE_TEXT,
                 80,
                 ['nullable' => false],
                 'User name'
             )
             ->addColumn(
-                'user_email',
+                Contact::FIELD_USER_EMAIL,
                 Table::TYPE_TEXT,
                 80,
                 ['nullable' => false],
                 'User email'
             )
             ->addColumn(
-                'phone_number',
+                Contact::FIELD_PHONE_NUMBER,
                 Table::TYPE_TEXT,
                 20,
                 ['nullable' => false],
                 'Phone number'
             )
             ->addColumn(
-                'created_at',
+                Contact::FIELD_CREATED_AT,
                 Table::TYPE_TIMESTAMP,
                 null,
                 ['nullable' => false, 'default' => Table::TIMESTAMP_INIT],
                 'Contact create date'
             )
             ->addIndex(
-                $setup->getIdxName('contact', ['store_id']),
-                ['store_id']
+                $setup->getIdxName(Contact::TABLE, [Contact::FIELD_STORE_ID]),
+                [Contact::FIELD_STORE_ID]
             )
             ->addForeignKey(
-                $setup->getFkName(Contact::TABLE, 'store_id', 'store', 'store_id'),
-                'store_id',
+                $setup->getFkName(Contact::TABLE, Contact::FIELD_STORE_ID, 'store', 'store_id'),
+                Contact::FIELD_STORE_ID,
                 $setup->getTable('store'),
                 'store_id',
                 Table::ACTION_SET_NULL
@@ -119,40 +119,40 @@ class InstallSchema implements InstallSchemaInterface
                 'Contact message ID'
             )
             ->addColumn(
-                'contact_id',
+                ContactMessage::FIELD_CONTACT_ID,
                 Table::TYPE_BIGINT,
                 null,
                 ['unsigned' => true, 'nullable' => false, 'default' => '0'],
                 'Contact ID'
             )
             ->addColumn(
-                'type_code',
+                ContactMessage::FIELD_TYPE_CODE,
                 Table::TYPE_TEXT,
                 30,
                 ['nullable' => false],
                 'Type code'
             )
             ->addColumn(
-                'text',
+                ContactMessage::FIELD_TEXT,
                 Table::TYPE_TEXT,
                 '64k',
                 ['nullable' => false],
                 'Text'
             )
             ->addColumn(
-                'created_at',
+                ContactMessage::FIELD_CREATED_AT,
                 Table::TYPE_TIMESTAMP,
                 null,
                 ['nullable' => false, 'default' => Table::TIMESTAMP_INIT],
                 'Contact create date'
             )
             ->addIndex(
-                $setup->getIdxName(Contact::TABLE, ['contact_id']),
-                ['contact_id']
+                $setup->getIdxName(ContactMessage::TABLE, [ContactMessage::FIELD_CONTACT_ID]),
+                [ContactMessage::FIELD_CONTACT_ID]
             )
             ->addForeignKey(
-                $setup->getFkName(ContactMessage::TABLE, 'contact_id', Contact::TABLE, Contact::FIELD_ID),
-                'contact_id',
+                $setup->getFkName(ContactMessage::TABLE, ContactMessage::FIELD_CONTACT_ID, Contact::TABLE, Contact::FIELD_ID),
+                ContactMessage::FIELD_CONTACT_ID,
                 $setup->getTable(Contact::TABLE),
                 Contact::FIELD_ID,
                 Table::ACTION_CASCADE

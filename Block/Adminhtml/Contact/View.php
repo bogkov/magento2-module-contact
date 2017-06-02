@@ -4,6 +4,7 @@ namespace Bogkov\Contact\Block\Adminhtml\Contact;
 
 use Bogkov\Contact\Model\Contact;
 use Bogkov\Contact\Model\ContactMessageFactory;
+use Bogkov\Contact\Model\ResourceModel\ContactMessage;
 use Bogkov\Contact\Model\ResourceModel\ContactMessage\Collection as ContactMessageCollection;
 use Magento\Backend\Block\Template\Context;
 use Magento\Framework\Registry;
@@ -33,6 +34,8 @@ class View extends Template
     protected $timezone;
 
     /**
+     * View constructor.
+     *
      * @param Context               $context
      * @param Registry              $registry
      * @param ContactMessageFactory $contactMessageFactory
@@ -55,6 +58,8 @@ class View extends Template
     }
 
     /**
+     * Contact
+     *
      * @return Contact
      */
     public function getContact()
@@ -63,6 +68,8 @@ class View extends Template
     }
 
     /**
+     * Contact messages
+     *
      * @return ContactMessageCollection
      */
     public function getContactMessages()
@@ -73,12 +80,14 @@ class View extends Template
 
         /** @var ContactMessageCollection $messageCollection */
         $messageCollection = $messageModel->getCollection();
-        $messageCollection->addFilter('contact_id', $contact->getId());
+        $messageCollection->addFilter(ContactMessage::FIELD_CONTACT_ID, $contact->getId());
 
         return $messageCollection;
     }
 
     /**
+     * Format date time
+     *
      * @param string $dateTime
      * @param string $format
      *

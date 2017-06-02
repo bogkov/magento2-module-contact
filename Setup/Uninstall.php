@@ -2,6 +2,8 @@
 
 namespace Bogkov\Contact\Setup;
 
+use Bogkov\Contact\Model\ResourceModel\Contact;
+use Bogkov\Contact\Model\ResourceModel\ContactMessage;
 use Magento\Framework\Setup\UninstallInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -23,8 +25,8 @@ class Uninstall implements UninstallInterface
     {
         $setup->startSetup();
 
-        $setup->getConnection()->dropTable('contact_message');
-        $setup->getConnection()->dropTable('contact');
+        $setup->getConnection()->dropTable(ContactMessage::TABLE);
+        $setup->getConnection()->dropTable(Contact::TABLE);
 
         $setup->endSetup();
     }

@@ -3,6 +3,7 @@
 namespace Bogkov\Contact\Controller\Adminhtml\MassAction;
 
 use Bogkov\Contact\Model\Contact;
+use Bogkov\Contact\Model\ResourceModel\Contact as ContactResourceModel;
 use Bogkov\Contact\Model\ResourceModel\Contact\CollectionFactory;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -40,13 +41,21 @@ class ChangeStatusCode extends Action
     {
         try {
             $collection = $this->collectionFactory->create();
-            $collection->addFieldToFilter('contact_id', ['id' => (array)$this->getRequest()->getParam('selected')]);
+            $collection->addFieldToFilter(
+                ContactResourceModel::FIELD_ID,
+                [
+                    'id' => (array)$this->getRequest()->getParam('selected'),
+                ]
+            );
 
             $counter = 0;
 
             /** @var Contact $contact */
             foreach ($collection->getItems() as $contact) {
-                $contact->setData('status_code', $this->getRequest()->getParam('status_code'));
+                $contact->setData(
+                    ContactResourceModel::FIELD_STATUS_CODE,
+                    $this->getRequest()->getParam(ContactResourceModel::FIELD_STATUS_CODE)
+                );
                 $contact->save();
 
                 $counter++;

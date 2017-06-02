@@ -16,11 +16,18 @@ use Magento\Framework\View\Result\PageFactory;
 class Index extends Action
 {
     /**
+     * Authorization level of a basic admin session
+     */
+    const ADMIN_RESOURCE = Config::NAME . '::contact';
+
+    /**
      * @var PageFactory
      */
     protected $pageFactory;
 
     /**
+     * Index constructor.
+     *
      * @param Context     $context
      * @param PageFactory $pageFactory
      */
@@ -33,23 +40,13 @@ class Index extends Action
     }
 
     /**
-     * Check the permission to run it
-     *
-     * @return bool
-     */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed(Config::NAME . '::contact');
-    }
-
-    /**
-     * Contact list action
+     * Dispatch request
      *
      * @return Page
      */
     public function execute()
     {
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
+        /** @var Page $resultPage */
         $resultPage = $this->pageFactory->create();
         $resultPage->setActiveMenu(Config::NAME . '::contact');
         $resultPage->getConfig()->getTitle()->prepend(__('Contact Us'));

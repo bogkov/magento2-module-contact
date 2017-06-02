@@ -16,13 +16,13 @@ class Contact extends AbstractDb
     /**
      * Fields
      */
-    const FIELD_ID = 'contact_id';
-
-    /**
-     * Status codes
-     */
-    const STATUS_CODE_WAIT_FOR_ANSWER = 'wait_for_answer';
-    const STATUS_CODE_ANSWERED        = 'answered';
+    const FIELD_ID           = 'contact_id';
+    const FIELD_STORE_ID     = 'store_id';
+    const FIELD_STATUS_CODE  = 'status_code';
+    const FIELD_USER_NAME    = 'user_name';
+    const FIELD_USER_EMAIL   = 'user_email';
+    const FIELD_PHONE_NUMBER = 'phone_number';
+    const FIELD_CREATED_AT   = 'created_at';
 
     /**
      * Define main table

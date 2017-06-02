@@ -13,6 +13,12 @@ use Magento\Framework\Model\AbstractModel;
 class ContactMessage extends AbstractModel
 {
     /**
+     * Type codes
+     */
+    const TYPE_CODE_CUSTOMER = 'customer';
+    const TYPE_CODE_OWNER    = 'owner';
+
+    /**
      * Define resource model
      *
      * @return void

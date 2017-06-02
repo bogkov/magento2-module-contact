@@ -4,8 +4,27 @@ Response to Contact Us,Відповідь на запит зворотнього
 View,Перегляд
 Wait for answer,Очікує на відповідь
 Answered,Відповідь надана
-User Name,Ім'я користувача
+Name,Ім'я користувача
 Phone Number,Телефонний номер
 Created At,Створено об
 Status,Статус
-User Email,Емейл користувача
+Email,Емейл користувача
+Response,Відповідь
+View,Перегляд
+Delete,Видалення
+Sent Response,Відправити відповідь
+The contact has been deleted.,Контакт був видалений.
+"We can't find a contact to delete.","Ми не можемо знайти контакт, щоб видалити."
+Response message successfully send,У відповідь повідомлення успішно відправлено
+Response message can't be empty,Повідомлення у відповідь не може бути порожнім
+Contact ID not specified,Ідентифікатор зворотнього зв'язку не знайдено
+Contact with #%1 no longer exists,Зворотній зв'язок #%1 більше не існує
+View Contact #%1,Перегляд звернення #%1
+A total of %1 record(s) were updated.,В цілому 1% запис(ів) було оновлено.
+Thanks for contacting us with your comments and questions. We'll respond to you very soon.,Дякуємо Вам за звернення до нас з вашими коментарями і питаннями. Ми відповімо вам в самий найближчий час.
+"We can't process your request right now. Sorry, that's all we know.","Ми не можемо обробити ваш запит прямо зараз. На жаль, це все, що ми знаємо."
+"Are you sure you want to delete a record?","Ви впевнені, що хочете видалити запис?"
+Change Status,Зміна Статусу
+"Are you sure you want to change the status of selected contacts to ""%1""?","Ви впевнені, що хочете змінити статус вибраних контактів на ""%1""?"
+Customer wrote at %1:,Клієнт писав о %1:
+Administrator answered at %1:,Адміністратор відповів о %1:

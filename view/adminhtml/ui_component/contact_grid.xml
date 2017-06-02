@@ -134,7 +134,7 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">User Email</item>
+                    <item name="label" xsi:type="string" translate="true">Email</item>
                     <item name="sortOrder" xsi:type="number">30</item>
                 </item>
             </argument>
@@ -143,7 +143,7 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">User Name</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
                     <item name="sortOrder" xsi:type="number">40</item>
                 </item>
             </argument>
