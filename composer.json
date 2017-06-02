@@ -2,11 +2,11 @@
     "name": "bogkov/magento2-module-contact",
     "description": "Extended functional for default Magento 2 Contact module",
     "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0",
         "magento/module-contact": "100.1.*"
     },
     "type": "magento2-module",
-    "version": "0.4.4",
+    "version": "1.4.0",
     "license": [
         "OSL-3.0",
         "AFL-3.0"

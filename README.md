@@ -8,6 +8,10 @@ Extended functional for default Magento 2 Contact module.
 
 This package can be installed as a [Composer](https://getcomposer.org/) dependency [bogkov/magento2-module-contact](https://packagist.org/packages/bogkov/magento2-module-contact).
 
+```bash
+composer require bogkov/magneto2-module-contact
+```
+
 #### Enable Module
 
 ```php
@@ -20,7 +24,7 @@ You may need to Flush Magento Cache after installation.
 
 ## Roadmap
 
-### 0.1.0
+### 1.1
 
  - [x] Core structure
  - [x] Setup InstallSchema and Uninstall
@@ -28,7 +32,7 @@ You may need to Flush Magento Cache after installation.
  - [x] Routes
  - [x] Admin menu
 
-### 0.2.0 
+### 1.2
 
  - [x] Model: resource model, grid collection 
  - [x] Controller: admin index action index
@@ -36,7 +40,7 @@ You may need to Flush Magento Cache after installation.
  - [x] View: admin UI component contact grid
  - [x] View: contact grid actions
 
-### 0.3.0
+### 1.3
 
  - [x] I18n: Core
  - [x] Controller: admin index action view
@@ -44,7 +48,7 @@ You may need to Flush Magento Cache after installation.
  - [x] Controller: override default Magento contact action post
  - [X] View: contact grid action delete
  
-### 0.4.0
+### 1.4
 
  - [X] Controller: admin index action delete
  - [X] View: admin grid manual change status
