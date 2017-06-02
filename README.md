@@ -24,7 +24,7 @@ You may need to Flush Magento Cache after installation.
 
 ## Roadmap
 
-### 1.1
+### 1.0
 
  - [x] Core structure
  - [x] Setup InstallSchema and Uninstall
@@ -32,7 +32,7 @@ You may need to Flush Magento Cache after installation.
  - [x] Routes
  - [x] Admin menu
 
-### 1.2
+### 1.1
 
  - [x] Model: resource model, grid collection 
  - [x] Controller: admin index action index
@@ -40,7 +40,7 @@ You may need to Flush Magento Cache after installation.
  - [x] View: admin UI component contact grid
  - [x] View: contact grid actions
 
-### 1.3
+### 1.2
 
  - [x] I18n: Core
  - [x] Controller: admin index action view
@@ -48,7 +48,7 @@ You may need to Flush Magento Cache after installation.
  - [x] Controller: override default Magento contact action post
  - [X] View: contact grid action delete
  
-### 1.4
+### 1.3
 
  - [X] Controller: admin index action delete
  - [X] View: admin grid manual change status
