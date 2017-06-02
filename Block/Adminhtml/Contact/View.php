@@ -7,6 +7,7 @@ use Bogkov\Contact\Model\ContactMessageFactory;
 use Bogkov\Contact\Model\ResourceModel\ContactMessage\Collection as ContactMessageCollection;
 use Magento\Backend\Block\Template\Context;
 use Magento\Framework\Registry;
+use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
 use Magento\Framework\View\Element\Template;
 
 /**
@@ -27,15 +28,22 @@ class View extends Template
     protected $contactMessageFactory;
 
     /**
+     * @var TimezoneInterface
+     */
+    protected $timezone;
+
+    /**
      * @param Context               $context
      * @param Registry              $registry
      * @param ContactMessageFactory $contactMessageFactory
+     * @param TimezoneInterface     $timezone
      * @param array                 $data
      */
     public function __construct(
         Context $context,
         Registry $registry,
         ContactMessageFactory $contactMessageFactory,
+        TimezoneInterface $timezone,
         array $data = []
     )
     {
@@ -43,6 +51,7 @@ class View extends Template
 
         $this->registry = $registry;
         $this->contactMessageFactory = $contactMessageFactory;
+        $this->timezone = $timezone;
     }
 
     /**
@@ -67,5 +76,16 @@ class View extends Template
         $messageCollection->addFilter('contact_id', $contact->getId());
 
         return $messageCollection;
+    }
+
+    /**
+     * @param string $dateTime
+     * @param string $format
+     *
+     * @return string
+     */
+    public function formatDateTime($dateTime, $format)
+    {
+        return $this->timezone->date(new \DateTime($dateTime))->format($format); // TODO timezone
     }
 }

@@ -62,21 +62,21 @@ class InstallSchema implements InstallSchemaInterface
             ->addColumn(
                 'user_name',
                 Table::TYPE_TEXT,
-                128,
+                80,
                 ['nullable' => false],
                 'User name'
             )
             ->addColumn(
                 'user_email',
                 Table::TYPE_TEXT,
-                128,
+                80,
                 ['nullable' => false],
                 'User email'
             )
             ->addColumn(
                 'phone_number',
                 Table::TYPE_TEXT,
-                255,
+                20,
                 ['nullable' => false],
                 'Phone number'
             )

@@ -44,19 +44,19 @@ class Options implements JsonSerializable
     {
         $result = [];
 
-        foreach ($this->statusCodeOptions->toOptionArray() as $optionCode) {
+        foreach ($this->statusCodeOptions->toOptionArray() as $option) {
             $result[] = [
-                'type' => 'status_code_' . $optionCode['value'],
-                'label' => $optionCode['label'],
+                'type' => 'status_code_' . $option['value'],
+                'label' => $option['label'],
                 'url' => $this->urlBuilder->getUrl(
                     'contact/massAction/changeStatusCode',
                     [
-                        'status_code' => $optionCode['value'],
+                        'status_code' => $option['value'],
                     ]
                 ),
                 'confirm' => [
-                    'title' => __('Confirm Change Status'),
-                    'message' => __('Are you sure to change status for selected contacts?'),
+                    'title' => __('Change Status'),
+                    'message' => __('Are you sure to change status for selected contacts to "%1"?', $option['label']),
                 ],
             ];
         }

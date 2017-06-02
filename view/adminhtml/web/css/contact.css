@@ -1,0 +1,56 @@
+.contact-info div {
+    padding-bottom: 10px;
+}
+
+.contact-info div span {
+    font-weight: bold;
+}
+
+.contact-message {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    width: 80%;
+    clear: both;
+    border: 1px solid #91b5be;
+    color: #262626;
+    background-color: #e1f5ff;
+}
+
+.contact-message.customer {
+    float: left;
+}
+
+.contact-message.owner {
+    float: right;
+}
+
+.contact-message-head {
+    font-weight: bold;
+    font-style: italic;
+    padding-bottom: 20px;
+}
+
+.contact-response-button {
+    text-align: center;
+    margin: 0 auto;
+    background-color: #eb5202;
+    border-color: #eb5202;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    text-decoration: none;
+    display: block;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.36;
+    padding: 4px 10px;
+}
+
+.contact-response-button:hover {
+    background-color: #ba4000;
+    border-color: #b84002;
+    box-shadow: 0 0 0 1px #007bdb;
+    color: #fff;
+    text-decoration: none;
+}

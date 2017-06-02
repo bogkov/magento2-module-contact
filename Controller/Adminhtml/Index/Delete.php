@@ -4,6 +4,7 @@ namespace Bogkov\Contact\Controller\Adminhtml\Index;
 
 use Bogkov\Contact\Model\Contact;
 use Magento\Backend\App\Action;
+use Magento\Framework\App\ResponseInterface;
 
 /**
  * Class Delete
@@ -13,16 +14,11 @@ use Magento\Backend\App\Action;
 class Delete extends Action
 {
     /**
-     * Delete action
-     *
-     * @return \Magento\Backend\Model\View\Result\Redirect
+     * @return ResponseInterface
      */
     public function execute()
     {
         $id = $this->getRequest()->getParam('contact_id');
-
-        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
-        $resultRedirect = $this->resultRedirectFactory->create();
 
         if (null !== $id) {
             try {
@@ -38,6 +34,6 @@ class Delete extends Action
             $this->messageManager->addErrorMessage(__('We can\'t find a contact to delete.'));
         }
 
-        return $resultRedirect->setPath('*/*/');
+        return $this->_redirect('contact/index');
     }
 }

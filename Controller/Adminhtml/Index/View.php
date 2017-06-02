@@ -72,7 +72,8 @@ class View extends Action
         $contactId = $this->getRequest()->getParam('contact_id');
 
         if (null === $contactId) {
-            return $this->redirectToIndexWithMessage(__('Contact ID not specified'));
+            $this->messageManager->addErrorMessage(__('Contact ID not specified'));
+            return $this->_redirect('contact/index');
         }
 
         $contact = $this->contactFactory->create();
@@ -80,12 +81,8 @@ class View extends Action
         $contact->load($contactId);
 
         if (null === $contact->getId()) {
-            return $this->redirectToIndexWithMessage(
-                sprintf(
-                    __('Contact with #%s no longer exists'),
-                    $contactId
-                )
-            );
+            $this->messageManager->addErrorMessage(__('Contact with #%1 no longer exists', $contactId));
+            return $this->_redirect('contact/index');
         }
 
         $this->registry->register('contact', $contact);
@@ -93,26 +90,8 @@ class View extends Action
         /** @var Page $page */
         $page = $this->pageFactory->create();
         $page->setActiveMenu(Config::NAME . '::contact');
-
-        $breadcrumb = sprintf(
-            __('View Contact #%s from %s'),
-            $contact->getId(),
-            $contact->getData('user_name')
-        );
-        $page->addBreadcrumb($breadcrumb, $breadcrumb);
+        $page->getConfig()->getTitle()->prepend(__('View Contact #%1', $contact->getId()));
 
         return $page;
-    }
-
-    /**
-     * @param string $message
-     *
-     * @return ResponseInterface
-     */
-    protected function redirectToIndexWithMessage($message)
-    {
-        $this->messageManager->addErrorMessage($message);
-
-        return $this->_redirect('contact/index');
     }
 }

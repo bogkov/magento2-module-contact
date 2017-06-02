@@ -49,5 +49,5 @@ You may need to Flush Magento Cache after installation.
  - [X] Controller: admin index action delete
  - [X] View: admin grid manual change status
  - [ ] Controller: admin index action response
- - [ ] Controller: admin manual change status
+ - [X] Controller: admin manual change status
  - [ ] Admin menu count wait for answer
