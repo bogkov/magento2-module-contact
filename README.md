@@ -9,7 +9,7 @@ Extended functional for default Magento 2 Contact module.
 This package can be installed as a [Composer](https://getcomposer.org/) dependency [bogkov/magento2-module-contact](https://packagist.org/packages/bogkov/magento2-module-contact).
 
 ```bash
-composer require bogkov/magneto2-module-contact
+composer require bogkov/magento2-module-contact
 ```
 
 #### Enable Module

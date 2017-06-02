@@ -172,7 +172,7 @@ class Post extends MagentoPost
         /** @var ContactMessage $messageModel */
         $messageModel = $this->contactMessageFactory->create();
         $messageModel->setData('contact_id', $contactModel->getId());
-        $messageModel->setData('type_code', Contact::TYPE_CODE_CUSTOMER);
+        $messageModel->setData('type_code', ContactMessage::TYPE_CODE_CUSTOMER);
         $messageModel->setData('text', $postObject->getData('comment'));
         $messageModel->save();
     }
